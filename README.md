@@ -1,5 +1,17 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Features
+
+- Basic installs (shadcn, lucide-react)
+
+- Home page
+
+<img src="docs/home.png" width="50%">
+
+- Charts page
+
+<img src="docs/charts.png" width="50%">
+
 ## Getting Started
 
 First, run the development server:
