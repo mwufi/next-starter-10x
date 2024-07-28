@@ -12,6 +12,16 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 <img src="docs/charts.png" width="50%">
 
+## Mobile dev features
+
+- **Preview mobile screens**
+
+Visit `/demo` to see your screens together
+
+> Looking for more features here? Comment in the Issues section!
+
+<img src="docs/demo.png" width="50%">
+
 ## Getting Started
 
 First, run the development server:
