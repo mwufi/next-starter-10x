@@ -6,23 +6,29 @@ import {
 } from "@uploadthing/react";
 
 import type { OurFileRouter } from "@/app/api/uploadthing/core";
+import { useState } from "react";
 
 const UploadButton = generateUploadButton<OurFileRouter>();
+
+const testImg = "https://utfs.io/f/016a19bd-ce35-445e-b09f-2f87a7548126-tny64.jpeg"
+
 export function UploadComponent() {
-    return (
-        <UploadButton
-            endpoint="imageUploader"
-            onClientUploadComplete={(res) => {
-                // Do something with the response
-                console.log("Files: ", res);
-                alert("Upload Completed");
-            }}
-            onUploadError={(error: Error) => {
-                // Do something with the error.
-                alert(`ERROR! ${error.message}`);
-            }}
-        />
-    )
+    const [src, setSrc] = useState<string | null>(null);
+
+    const upload = <UploadButton
+        endpoint="imageUploader"
+        onClientUploadComplete={(res) => {
+            // Do something with the response
+            console.log("Files: ", res);
+            setSrc(res[0].url);
+        }}
+        onUploadError={(error: Error) => {
+            // Do something with the error.
+            alert(`ERROR! ${error.message}`);
+        }}
+    />
+
+    return src ? <img src={src} alt="uploaded image" /> : upload
 }
 
 export const UploadDropzone = generateUploadDropzone<OurFileRouter>();

@@ -21,7 +21,7 @@ export const ourFileRouter: FileRouter = {
         console.log("Upload complete for", metadata)
         console.log("file url", file.url)
 
-        return { uploadedBy: metadata.userId }
+        return { uploadedBy: metadata.userId, fileUrl: file.url }
     })
 }
 export type OurFileRouter = typeof ourFileRouter
