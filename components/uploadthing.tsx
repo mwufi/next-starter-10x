@@ -30,9 +30,23 @@ export function UploadComponent() {
 
     return <div className="flex flex-col">
         {src ? <img src={src} alt="uploaded image" /> : upload}
-        <div className="flex gap-">
+        <div className="flex gap-2">
             <p>Upload some text too</p>
             <UploadButton
+                endpoint="textUploader"
+                onClientUploadComplete={(res) => {
+                    // Do something with the response
+                    console.log("Files: ", res);
+                }}
+                onUploadError={(error: Error) => {
+                    // Do something with the error.
+                    alert(`ERROR! ${error.message}`);
+                }}
+            />
+        </div>
+        <div className="flex gap-2">
+            <p>Upload some text too</p>
+            <UploadDropzone
                 endpoint="textUploader"
                 onClientUploadComplete={(res) => {
                     // Do something with the response
