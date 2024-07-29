@@ -5,7 +5,7 @@ export default function Page() {
         <h1 className="text-2xl font-bold mb-4">Demos</h1>
         <ul className="mt-4 space-y-4">
             <li>
-                <Link href="/uploadtest" className="block p-4 bg-white shadow-md rounded-lg hover:shadow-lg transition-shadow">
+                <Link href="/demos/uploadtest" className="block p-4 bg-white shadow-md rounded-lg hover:shadow-lg transition-shadow">
                     <h2 className="text-lg font-semibold text-blue-600">Image Upload Demo</h2>
                     <p className="text-gray-600 mt-1">Explore our image upload functionality using UploadThing</p>
                 </Link>

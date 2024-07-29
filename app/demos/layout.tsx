@@ -9,7 +9,7 @@ const Navbar = () => (
             </Link>
             <ul className="flex space-x-4">
                 <li>
-                    <Link href="/demos" className="text-white hover:text-gray-300">
+                    <Link href="/demos/uploadtest" className="text-white hover:text-gray-300">
                         Demos
                     </Link>
                 </li>
