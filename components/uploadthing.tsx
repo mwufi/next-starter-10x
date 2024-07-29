@@ -10,7 +10,7 @@ import { useState } from "react";
 
 const UploadButton = generateUploadButton<OurFileRouter>();
 
-const testImg = "https://utfs.io/f/016a19bd-ce35-445e-b09f-2f87a7548126-tny64.jpeg"
+const defaultImg = "https://utfs.io/f/cf50a3ad-69c5-448e-86ac-e8aaab81b493-tny64.jpeg"
 
 export function UploadComponent() {
     const [src, setSrc] = useState<string | null>(null);
@@ -29,7 +29,17 @@ export function UploadComponent() {
     />
 
     return <div className="flex flex-col">
-        {src ? <img src={src} alt="uploaded image" /> : upload}
+        {defaultImg && <div className="max-h-[300px] p-2">
+            <img src={defaultImg} alt="uploaded image" />
+        </div>}
+        {src && <div className="max-h-[300px] p-2">
+            <img src={src} alt="uploaded image" />
+        </div>}
+        <div className="flex gap-2"
+        >
+            Upload another image
+            {upload}
+        </div>
         <div className="flex gap-2">
             <p>Upload some text too</p>
             <UploadButton
